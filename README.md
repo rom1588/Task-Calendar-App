@@ -1,56 +1,57 @@
 ###Task Calendar App (C++)
 
-##�T�v
+##概要
 
-#���̃v���W�F�N�g�́AC++��Web�t���[�����[�NWt���g�p���ĊJ�����ꂽ�A�^�X�N�Ǘ��J�����_�[�A�v���P�[�V�����ł��B���X�̃^�X�N��\���o�^�E�Ǘ��ł�����̂��쐬����̂��ڕW�ł�
+#このプロジェクトは、C++とWebフレームワークWtを使用して開発された、タスク管理カレンダーアプリケーションです。日々のタスクや予定を登録・管理できるものを作成するのが目標です。
+C++初学者が学びながら作るものなので一部不可解な点等あるかと思います。
 
-##����
+##特徴
 
-    #�J�����_�[�r���[: ���P�ʂŃ^�X�N�Ɨ\����ꗗ�\�����܂��B
+    #カレンダービュー: 月単位でタスクと予定を一覧表示します。
 
-    #�^�X�N�E�\��̓o�^: �^�C�g���A�����A�ڍׂȂǂ���͂��āA�^�X�N��\����ȒP�ɓo�^�ł��܂��B
+    #タスク・予定の登録: タイトル、日時、詳細などを入力して、タスクや予定を簡単に登録できます。
 
-    #�ʒm�@�\: �o�^�����^�X�N��\��̎��Ԃ�������ʒm���܂��B
+    #通知機能: 登録したタスクや予定の時間が来たら通知します。
 
-    #���[�U�[�F�؋@�\: ���[�U�[���ƂɃ^�X�N�����S�ɊǗ��ł��܂��B
+    #ユーザー認証機能: ユーザーごとにタスクを安全に管理できます。
 
-    #�f�[�^�x�[�X�A�g: SQLite���g�p���āA�^�X�N�f�[�^���i�������܂��B
+    #データベース連携: SQLiteを使用して、タスクデータを永続化します。
 
-##�Z�p�X�^�b�N
+##技術スタック
 
-    #����: C++
+    #言語: C++
 
-    #�t���[�����[�N: Wt (Web Toolkit)
+    #フレームワーク: Wt (Web Toolkit)
 
-    #�f�[�^�x�[�X: SQLite
+    #データベース: SQLite
 
-    #�O�����C�u����:
+    #外部ライブラリ:
 
-        #JSON for Modern C++: �^�X�N�f�[�^�̃V���A���C�Y/�f�V���A���C�Y
+        #JSON for Modern C++: タスクデータのシリアライズ/デシリアライズ
 
-        #SQLiteCpp: C++����SQLite�f�[�^�x�[�X�𑀍삷�邽�߂̃��b�p�[���C�u����
+        #SQLiteCpp: C++からSQLiteデータベースを操作するためのラッパーライブラリ
 
-##�v���W�F�N�g�̍\��
+##プロジェクトの構造
 
 ```
 .
-������ src/                  # �\�[�X�R�[�h
-��   ������ Task.h            # �^�X�N�N���X�̒�`
-��   ������ Event.h           # �\��N���X�̒�`
-��   ������ CalendarManager.h # �^�X�N�Ǘ����W�b�N
-��   ������ main.cpp          # �A�v���P�[�V�����̃G���g���[�|�C���g
-������ include/              # �w�b�_�[�t�@�C��
-������ build/                # �r���h�f�B���N�g��
-������ data/                 # �f�[�^�x�[�X�t�@�C���Ȃ�
-������ CMakeLists.txt        # CMake�r���h�ݒ�
+├── src/                  # ソースコード
+│   ├── Task.h            # タスククラスの定義
+│   ├── Event.h           # 予定クラスの定義
+│   ├── CalendarManager.h # タスク管理ロジック
+│   └── main.cpp          # アプリケーションのエントリーポイント
+├── include/              # ヘッダーファイル
+├── build/                # ビルドディレクトリ
+├── data/                 # データベースファイルなど
+└── CMakeLists.txt        # CMakeビルド設定
 ```
 
-##����̓W�]
+##今後の展望
 
-    #iOS/Android�A�v���ւ̓W�J: C++�̃R�A���W�b�N���ė��p���A���o�C���A�v�����J���B
+    #iOS/Androidアプリへの展開: C++のコアロジックを再利用し、モバイルアプリを開発。
 
-    #�N���E�h�����@�\: �����̒[���ԂŃ^�X�N�f�[�^�𓯊��ł���悤�ɂ���B
+    #クラウド同期機能: 複数の端末間でタスクデータを同期できるようにする。
 
-    #�f�U�C���̉��P: ��胂�_���Ŏg���₷��UI�ւ̍��V�B
+    #デザインの改善: よりモダンで使いやすいUIへの刷新。
 
 
