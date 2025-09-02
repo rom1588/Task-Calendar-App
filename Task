@@ -50,3 +50,5 @@ public:
     }
     void setDueDate(const time_point& due) {
         dueDate = due;
+    }
+};
