@@ -1,0 +1,58 @@
+#ifndef TASK_H
+#define TASK_H
+
+#include <string>
+#include <chrono>
+
+// 日時を扱う
+using time_point = std::chrono::system_clock::time_point;
+
+class Task {
+private:
+    int id; // タスクID
+    std::string title; // タイトル
+    std::string description; // 内容
+    time_point dueDate; // 期限
+    bool isCompleted; // 完了フラグ
+
+public:
+    // コンストラクタ
+    Task(int taskId, std::string taskTitle, time_point due)
+        : id(taskId), title(taskTitle), dueDate(due), isCompleted(false) {}
+
+    // デフォルトコンストラクタ（フレームワーク時に利用する）
+    Task() : id(0), isCompleted(false) {}
+
+    // タスクを完了済にするメソッド
+    void complete() {
+        isCompleted = true;
+    }
+
+    // タスク情報を表示するメソッド
+    void display() const {
+        std::cout << "--------------------\n"
+                  << "Task ID: " << id << "\n"
+                  << "Title: " << title << "\n"
+                  << "Description: " << description << "\n"
+                  << "Due Date: " << std::chrono::system_clock::to_time_t(dueDate) << "\n"
+                  << "Completed: " << (isCompleted ? "Complete" : "In Progress") << "\n"
+                  << "--------------------\n";
+    }
+
+    // ゲッター
+    int getId() const { return id; }
+    std::string getTitle() const { return title; }
+    std::string getDescription() const { return description; }
+    time_point getDueDate() const { return dueDate; }
+    bool getIsCompleted() const { return isCompleted; }
+
+    // セッター
+    void setDescription(const std::string& desc) {
+        description = desc;
+    }
+    void setDueDate(const time_point& due) {
+        dueDate = due;
+    }
+};
+
+#endif // TASK_H
